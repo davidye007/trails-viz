@@ -102,7 +102,7 @@ jobs:
           # cd ..
           # echo "local version bump successful $new_version"
           new_version=$(sed -n "s/__version__ = '\(.*\)'/\1/p" __init__.py)
-          git add trails-viz-api/trailsvizapi/__init__.py
+          git add __init__.py
           git commit -m "Auto update version to $new_version"
           echo "commited after version update"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
