@@ -4,12 +4,12 @@ on:
     branches:
       - master
     paths:
-      - 'trails-viz-api/**'
+      - 'trails-viz-api/trailsvizapi/**'
   pull_request:
     branches:
       - master
     paths:
-      - 'trails-viz-api/**'
+      - 'trails-viz-api/trailsvizapi/**'
     
 jobs:
   build:
