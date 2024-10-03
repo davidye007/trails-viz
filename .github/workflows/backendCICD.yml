@@ -83,7 +83,7 @@ jobs:
           set -e
           commit_message=$(git log -1 --pretty=%B)  # Get commit message
           git checkout master
-          cd trails-viz-api/trailsvizapi
+          cd trails-viz-api/
           echo "Updating version..."
           if [[ "$commit_message" == *"release=major"* ]]; then
             bump2version major
