@@ -114,9 +114,9 @@ jobs:
       - name: Deploy to Digital Ocean Droplet
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.DROPLET_IP }}
+          host: ${{ secrets.DROPLET_HOSTNAME }}
           username: ${{ secrets.SSH_USERNAME }}  # Update to use nginx user
-          key: ${{ secrets.DROPLET_SSH_KEY }}
+          key: ${{ secrets.SSH_KEY }}
           script: |
             cd trails-viz/
             git pull origin master
