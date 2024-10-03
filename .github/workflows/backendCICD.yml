@@ -94,15 +94,14 @@ jobs:
           else
             bump2version patch
           fi
-          cd trailsvizapi/
           # update the api version in __init__.py
           # git checkout master
           # cd trails-viz-api
           # sed -i "s/__version__.*/__version__ = '$new_version'/" trailsvizapi/__init__.py
           # cd ..
           # echo "local version bump successful $new_version"
-          new_version=$(sed -n "s/__version__ = '\(.*\)'/\1/p" __init__.py)
-          git add __init__.py
+          new_version=$(sed -n "s/__version__ = '\(.*\)'/\1/p" trailsvizapi/__init__.py)
+          git add trailsvizapi/__init__.py .bumpversion.cfg
           git commit -m "Auto update version to $new_version"
           echo "commited after version update"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
