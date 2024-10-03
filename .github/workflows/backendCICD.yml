@@ -30,7 +30,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8
         pip install wheel
-        pip install bump2version
         cd trails-viz-api
         pip install -r requirements.txt
 
@@ -61,7 +60,17 @@ jobs:
       #   with:
       #     name: trails-viz-api-dist
       #     path: trails-viz-api/dist
-      
+      - name: Set up python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.7'
+
+      - name: Install dependencies
+        run: |
+          set -e
+          python -m pip install --upgrade pip
+          pip install bump2version
+
       - name: Setup git user identity
         run: |
           git config --global user.name "outdoorrd-bot"
