@@ -94,7 +94,7 @@ jobs:
           else
             bump2version patch
           fi
-          
+          cd trailsvizapi/
           # update the api version in __init__.py
           # git checkout master
           # cd trails-viz-api
