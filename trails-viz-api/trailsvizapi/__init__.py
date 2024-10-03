@@ -1,5 +1,4 @@
 # version must be updated here, setup.py reads from this file
-# dummy comment to test CI/CD
 from flask import Flask
 from flask_cors import CORS
 from flask_bcrypt import Bcrypt
