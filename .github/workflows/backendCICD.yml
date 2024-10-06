@@ -121,6 +121,7 @@ jobs:
             git pull origin master
             conda activate trails-viz-api
             cd trails-viz-api/
+            pwd
             pip install --upgrade pip
             pip install -r requirements.txt
             cd docker-conf/
