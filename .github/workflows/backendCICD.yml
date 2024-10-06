@@ -125,6 +125,7 @@ jobs:
             cd trails-viz-api/
             pip install --upgrade pip
             pip install -r requirements.txt
+            cd ..
             cd docker-conf/
             chmod +x ./start.sh
             ./start.sh
