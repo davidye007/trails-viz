@@ -119,7 +119,9 @@ jobs:
           script: |
             set -e
             cd trails-viz/
-            git pull origin master
+            git fetch origin
+            git reset --hard origin/master
+            git clean -fd
             source /home/nginx/miniconda3/etc/profile.d/conda.sh
             conda activate trails-viz-api
             cd trails-viz-api/
