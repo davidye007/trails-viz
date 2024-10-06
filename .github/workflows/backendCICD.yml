@@ -39,13 +39,6 @@ jobs:
         cd trails-viz-api
         flake8 . --count --max-line-length=119 --exclude trailsvizapi/__init__.py --show-source --statistics
         python setup.py bdist_wheel
-
-    # - name: Upload build artifact # save the dist folder as an artifact
-    #   if: github.event_name == 'push'
-    #   uses: actions/upload-artifact@v4
-    #   with:
-    #     name: trails-viz-api-dist
-    #     path: trails-viz-api/dist
   
   deploy:
     needs: build
@@ -55,11 +48,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       
-      # - name: Download build artifact # download the dist folder from build
-      #   uses: actions/download-artifact@v4
-      #   with:
-      #     name: trails-viz-api-dist
-      #     path: trails-viz-api/dist
       - name: Set up python
         uses: actions/setup-python@v3
         with:
@@ -114,7 +102,7 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.DROPLET_HOSTNAME }}
-          username: ${{ secrets.SSH_USERNAME }}  # Update to use nginx user
+          username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           script: |
             set -e
