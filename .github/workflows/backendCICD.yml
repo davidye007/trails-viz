@@ -118,7 +118,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             set -e
-            whoami
             cd trails-viz/
             git pull origin master
             source /home/nginx/miniconda3/etc/profile.d/conda.sh
@@ -128,5 +127,5 @@ jobs:
             pip install -r requirements.txt
             cd ..
             cd docker-conf/
-            # chmod +x ./start.sh
-            # ./start.sh
+            chmod +x ./start.sh
+            ./start.sh
