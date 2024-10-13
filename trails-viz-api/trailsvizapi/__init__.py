@@ -3,7 +3,7 @@ from flask import Flask
 from flask_cors import CORS
 from flask_bcrypt import Bcrypt
 # add dummy comment
-__version__ = '2.15.11'
+__version__ = '2.15.12'
 
 
 app = Flask(__name__)
