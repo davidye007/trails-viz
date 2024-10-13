@@ -8,4 +8,4 @@ pkill uwsgi || echo "uWSGI not running"
 /home/nginx/miniconda3/envs/trails-viz-api/bin/uwsgi --ini /home/nginx/trails-viz/trails-viz-api/uwsgi-config.ini
 
 # Start nginx in background
-nginx -c /home/nginx/trails-viz/docker-conf/nginx.conf
+nginx -c /home/nginx/trails-viz/web-server-conf/nginx.conf
