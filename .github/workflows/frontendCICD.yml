@@ -94,7 +94,7 @@ jobs:
           git push origin master
           git tag "app-$new_version"
           git push origin --tags
-          echo "pushed new version to master"
+          echo "pushed new versioning update to master"
       
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

@@ -90,7 +90,7 @@ jobs:
           git push origin master
           git tag "api-v$new_version"
           git push origin --tags
-          echo "pushed new version to master"
+          echo "pushed new versioning update to master"
       
       - name: Deploy to Digital Ocean Droplet
         uses: appleboy/ssh-action@master
