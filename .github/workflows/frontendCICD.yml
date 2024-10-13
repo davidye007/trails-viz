@@ -84,13 +84,14 @@ jobs:
           # Pull latest changes before version bump
           git pull origin master
           cd trails-viz-app
-          new_version=$(npm version $version_bump)  # this returs the new version number with 'v' as prefix
+          new_version=$(npm version $version_bump)  # this returns the new version number with 'v' as prefix
+          new_version_number=${new_version#v}  # Remove the 'v' prefix
           cd ..
 
           echo "local version bump successful $new_version"
           git add trails-viz-app/package.json
           git add trails-viz-app/package-lock.json
-          git commit -m "Auto update version to $new_version"
+          git commit -m "Auto update app version to $new_version_number"
           echo "commited after version update"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           git push origin master
