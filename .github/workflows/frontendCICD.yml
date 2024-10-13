@@ -81,6 +81,8 @@ jobs:
           
           # update the version in package.json as it's the easiest thing to do using npm
           git checkout master
+          # Pull latest changes before version bump
+          git pull origin master
           cd trails-viz-app
           new_version=$(npm version $version_bump)  # this returs the new version number with 'v' as prefix
           cd ..
