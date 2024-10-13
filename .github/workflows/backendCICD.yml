@@ -71,6 +71,8 @@ jobs:
           set -e
           commit_message=$(git log -1 --pretty=%B)  # Get commit message
           git checkout master
+          # Pull latest changes before version bump
+          git pull origin master
           cd trails-viz-api/
           echo "Updating version..."
           if [[ "$commit_message" == *"release=major"* ]]; then
@@ -103,7 +105,6 @@ jobs:
             cd trails-viz/
             git fetch origin
             git reset --hard origin/master
-            git clean -fd
             source /home/nginx/miniconda3/etc/profile.d/conda.sh
             conda activate trails-viz-api
             cd trails-viz-api/
