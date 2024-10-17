@@ -5,7 +5,6 @@ from flask_bcrypt import Bcrypt
 
 __version__ = '2.15.15'
 
-
 app = Flask(__name__)
 CORS(app)
 bcrypt = Bcrypt(app)
