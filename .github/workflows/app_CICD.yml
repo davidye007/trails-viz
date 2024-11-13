@@ -98,9 +98,16 @@ jobs:
           git tag "app-$new_version"
           git push origin --tags
           echo "pushed new versioning update to master"
-      
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+
+      - name: Setup SSH key
+        uses: webfactory/ssh-agent@v0.5.3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: trails-viz-app/dist
+          ssh-private-key: ${{ secrets.SSH_KEY }}
+      
+      - name: Transfer files to Digital Ocean Droplet
+        run: |
+          rsync -avz -e "ssh -o StrictHostKeyChecking=no" trails-viz-app/dist/ ${{ secrets.SSH_USERNAME }}@${{ secrets.DROPLET_HOSTNAME }}:/var/www/html/trail-viz-app/
+      
+      # - name: Restart Nginx (if necessary)
+      #   run: |
+      #     ssh your_username@your_server_ip 'sudo systemctl restart nginx'
