@@ -107,7 +107,3 @@ jobs:
       - name: Transfer files to Digital Ocean Droplet
         run: |
           rsync -avz -e "ssh -o StrictHostKeyChecking=no" trails-viz-app/dist/ ${{ secrets.SSH_USERNAME }}@${{ secrets.DROPLET_HOSTNAME }}:/var/www/html/trail-viz-app/
-      
-      # - name: Restart Nginx (if necessary)
-      #   run: |
-      #     ssh your_username@your_server_ip 'sudo systemctl restart nginx'
