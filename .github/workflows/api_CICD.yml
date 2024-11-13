@@ -5,13 +5,13 @@ on:
       - master
     paths:
       - 'trails-viz-api/**'
-      - 'trails-viz-api/**'
+      - 'web-server-conf/**'
   pull_request:
     branches:
       - master
     paths:
       - 'trails-viz-api/**'
-      - 'trails-viz-api/**'
+      - 'web-server-conf/**'
     
 jobs:
   build:
