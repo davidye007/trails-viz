@@ -5,10 +5,12 @@ on:
       - master
     paths:
       - 'trails-viz-api/**'
+      - 'trails-viz-api/**'
   pull_request:
     branches:
       - master
     paths:
+      - 'trails-viz-api/**'
       - 'trails-viz-api/**'
     
 jobs:
