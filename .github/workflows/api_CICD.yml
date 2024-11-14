@@ -92,7 +92,7 @@ jobs:
           git tag "api-v$new_version"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           if ! git push origin "api-v$new_version"; then
-            echo "Tag push failed likely due to an existing tag."
+            echo "Tag push failed, likely due to an existing tag."
             exit 1
           fi
           git push origin master         
