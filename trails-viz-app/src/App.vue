@@ -25,7 +25,6 @@ export default {
     let self = this;
 
     // add interceptor to show modal when 403 response is received
-    // 
     axios.interceptors.response.use(
       response => response,
       error => {
