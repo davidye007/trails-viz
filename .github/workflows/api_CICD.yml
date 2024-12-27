@@ -32,6 +32,7 @@ jobs:
 
     - name: Set up python
       run: |
+        sudo rm -f /usr/bin/python
         sudo ln -s /usr/bin/python3.7 /usr/bin/python
         python --version
         python -m ensurepip
