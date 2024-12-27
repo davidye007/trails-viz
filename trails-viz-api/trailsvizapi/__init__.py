@@ -9,6 +9,7 @@ app = Flask(__name__)
 CORS(app)
 bcrypt = Bcrypt(app)
 
+# dummy comment
 from trailsvizapi.config.auth import authenticate_request
 from trailsvizapi.controller.projects import *
 from trailsvizapi.controller.estimates import *
