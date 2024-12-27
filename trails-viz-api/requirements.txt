@@ -12,5 +12,3 @@ google-cloud-core==1.1.0
 google-cloud-storage==1.20.0
 cryptography==3.2
 urllib3==1.26.6
-pytz==2021.1
-typing_extensions==4.5.0

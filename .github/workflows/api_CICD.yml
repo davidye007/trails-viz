@@ -42,6 +42,8 @@ jobs:
       run: |
         set -e
         python -m pip install --upgrade pip
+        pip install pytz==2021.1
+        pip install typing_extensions==4.7.1
         pip install flake8
         pip install wheel
         cd trails-viz-api
